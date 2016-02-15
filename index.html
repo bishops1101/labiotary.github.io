@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
-
+<!-- Pinterest verficn -->
+<meta name="p:domain_verify" content="1624e545582911134853d80849884db7"/> 
 <title>Homepage</title>
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
@@ -228,8 +229,8 @@
                 <ul class="social-link">
                 	<li class="twitter"><a href="https://twitter.com/labIoTary"><i class="fa-twitter"></i></a></li>
                     <li class="facebook"><a href="https://www.facebook.com/labiotary"><i class="fa-facebook"></i></a></li>
-                    <li class="pinterest"><a href="#"><i class="fa-pinterest"></i></a></li>
-                    <li class="gplus"><a href="#"><i class="fa-google-plus"></i></a></li>
+                    <li class="pinterest"><a href="https://www.pinterest.com/labiotary/"><i class="fa-pinterest"></i></a></li>
+                    <!-- <li class="gplus"><a href="#"><i class="fa-google-plus"></i></a></li> -->
                     </ul>
             </div>
         	<div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
@@ -283,12 +284,6 @@
 			$('html, body').stop().animate({
 				scrollTop: $($anchor.attr('href')).offset().top - 102
 			}, 1500,'easeInOutExpo');
-			/*
-			if you don't want to use the easing effects:
-			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top
-			}, 1000);
-			*/
 			event.preventDefault();
 		});
 	})
