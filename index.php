@@ -1,10 +1,31 @@
-<!DOCTYPE html>
+<?php
+$db_host = 'localhost';
+$db_user = 'root';
+$db_pass = '';
+$db_name = 'labiot';
+$db_port = 3306;
+
+$dbc = mysqli_connect($db_host, $db_user,$db_pass,$db_name,$db_port);
+
+if(!$dbc)
+  die('Connection failed. Terminating session.');
+
+if(isset($_POST['submit'])) {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $myi=mysqli_query($dbc,"INSERT INTO userlog(name,email) VALUES('$name','$email')");
+}
+
+mysqli_close($dbc);
+?>
+
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
     <!-- Pinterest verficn -->
-    <meta name="p:domain_verify" content="1624e545582911134853d80849884db7"/>
+    <meta name="p:domain_verify" content="1624e545582911134853d80849884db7"/> 
     <title>LabIOTary</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
@@ -40,8 +61,8 @@
         <header class="header" id="header"><!--header-start-->
            <div class="container">
                <figure class="logo animated fadeInDown delay-07s">
-                   <a href="#"><img src="img/logo.png" alt="Labiotary logo"></a>
-               </figure>
+                   <a href="#"><img src="img/logo.png" alt="Labiotary logo"></a>	
+               </figure>	
                <h1 class="animated fadeInDown delay-07s">Welcome to Lab<span style="font-size: 60px;font-weight:800;">ioT</span>ary</h1>
                <ul class="we-create animated fadeInUp delay-1s">
                    <li>We are a group of like minded people in the field of Internet of Things.</li>
@@ -56,15 +77,12 @@
        <div class="container">
         <ul class="main-nav">
         	<li><a href="#header">Home</a></li>
-        	<li><a href="https://medium.com/labiotary-blog">Blog</a></li>
+        	<li><a href="https://medium.com/labiotary-blog">Blog</a></li>            
             <li><a href="#service">Services</a></li>
-            <li><a href="http://www.instructables.com/member/Think+Labs/">Portfolio</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <!--<li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>-->
             <li><a href="#team">About us</a></li>
             <li><a href="#workshop">Event</a></li>
-            <li><a href="http://bit.ly/1W2ikpF">Register for InternIQ</a></li>
-
             <li><a href="#contact">Contact Us</a></li>
 
         </ul>
@@ -93,7 +111,7 @@
                    <i class="fa-gear"></i>
                </div>
                <div class="service-list-col2">
-                <h3>Training / Internship / Freelancing</h3>
+                <h3>Training/Internship/Freelancing</h3>
             </div>
         </div>
         <div class="service-list">
@@ -130,13 +148,13 @@
             <p>Alone what I can do was so little, together what i did was so much. I learnt here that key to creativity is to begin with the end in mind, with a vision and a blue print of the desired result. Working long nights with a bunch of crazy and passionate people was not only great but also too much fun. All I would say is a Thank you for waking up the engineer in me. <br>— Jasmeet Chhabra</p>
         </div>
     </div>
-
+    
     <div class="row">&nbsp;</div>
     <div class="row">
         <div class="col-lg-6">
             <p>Working for Labiotary has been an enriching experience. Every step I take with the amazing team here is a step forward towards challenges, fun and new learning curves. Although I been part of the team only for a couple of months now, but I have a lot to say when I ask myself, 'aaj kya ukhaada?' <br>— Kshitiz Arora</p>
 
-
+            
         </div>
 
         <div class="col-lg-6">
@@ -144,7 +162,7 @@
 
         </div>
     </div>
-
+    
 </div>
 
 </section><!--main-section client-part-end-->
@@ -154,8 +172,21 @@
         <h2>team</h2>
         <h6>Take a closer look into our amazing team.</h6>
         <div class="team-leader-block clearfix">
+        <div class="team-leader-box">
+                <div class="team-leader wow fadeInDown delay-03s"> 
+                    <div class="team-leader-shadow"><a href="#"></a></div>
+                    <img src="img/team-leader-pic0.jpg" alt="">
+                    <ul>
+                        <li><a href="https://www.facebook.com/prady786" class="fa-facebook"></a></li>
+                    </ul>
+                </div>
+                <h3 class="wow fadeInDown delay-03s">Pardeep Garg</h3>
+                <span class="wow fadeInDown delay-03s">Mentor</span>
+            </div>
+
+
             <div class="team-leader-box">
-                <div class="team-leader wow fadeInDown delay-03s">
+                <div class="team-leader wow fadeInDown delay-03s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic1.jpg" alt="">
                     <ul>
@@ -167,9 +198,9 @@
                 <h3 class="wow fadeInDown delay-03s">Pushp Bajaj</h3>
                 <span class="wow fadeInDown delay-03s">Co-Founder</span>
             </div>
-
+           
             <div class="team-leader-box">
-                <div class="team-leader  wow fadeInDown delay-06s">
+                <div class="team-leader  wow fadeInDown delay-06s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic2.jpg" alt="">
                     <ul>
@@ -181,11 +212,11 @@
                 </div>
                 <h3 class="wow fadeInDown delay-06s">Abhinav Kumar</h3>
                 <span class="wow fadeInDown delay-06s">Co-Founder</span>
-
+                
             </div>
 
             <div class="team-leader-box">
-                <div class="team-leader wow fadeInDown delay-09s">
+                <div class="team-leader wow fadeInDown delay-09s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic3.jpg" alt="">
                     <ul>
@@ -200,49 +231,18 @@
 
             </div>
         </div>
-<!--</section><!--main-section team-end
-
-<section class="main-section team" id="team">main-section team-start-->
-	<!--<div class="container">-->
-        <h2>Advisors</h2>
-        <h6></h6>
-        <div class="team-leader-block clearfix">
-        <div class="team-leader-box">
-                <div class="team-leader wow fadeInDown delay-03s">
-                    <div class="team-leader-shadow"><a href="#"></a></div>
-                    <img src="img/team-leader-pic0.jpg" alt="">
-                    <ul>
-                        <li><a href="https://www.facebook.com/prady786" class="fa-facebook"></a></li>
-                    </ul>
-                </div>
-                <h3 class="wow fadeInDown delay-03s">Pardeep Garg</h3>
-                <span class="wow fadeInDown delay-03s">Mentor</span>
-            </div>
-
-
-            <div class="team-leader-box">
-                <div class="team-leader wow fadeInDown delay-03s">
-                    <div class="team-leader-shadow"><a href="#"></a></div>
-                    <img src="img/team-leader-pic4.jpg" alt="">
-                    <ul>
-                        <li><a href="https://www.facebook.com/vivek.k.sehgal" class="fa-facebook"></a></li>
-                    </ul>
-                </div>
-                <h3 class="wow fadeInDown delay-03s">Vivek Sehgal</h3>
-                <span class="wow fadeInDown delay-03s">Mentor</span>
-            </div>
-
-        </div>
 </section><!--main-section team-end-->
+
+
 
 <section class="business-talking" id="workshop"><!--business-talking-start-->
 	<div class="container">
         <h2>Event</h2>
-        <div class="row"><div class="col-lg-6 col-lg-offset-3" style="margin-bottom: 5px;margin-right:5px"><img src="img/poster.jpg"/></div></div>
+        <div class="row"><div class="col-lg-6 col-lg-offset-3" style="margin-bottom: 5px;margin-right:5px"><img src="img/poster.png"/></div></div>
         <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
-        <div id="fb-root"></div><script>(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div class="fb-post" data-href="https://www.facebook.com/labiotary/posts/1691590591130258" data-width="500"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/labiotary/posts/1691590591130258">Posted by <a href="https://www.facebook.com/labiotary/">Labiotary</a> on&nbsp;<a href="https://www.facebook.com/labiotary/posts/1691590591130258">Sunday, March 13, 2016</a></blockquote></div></div>
-
+        <div id="fb-root"></div><script>(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div class="fb-post" data-href="https://www.facebook.com/labiotary/posts/1681726635449987" data-width="500"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/labiotary/posts/1681726635449987">Posted by <a href="https://www.facebook.com/labiotary/">Labiotary</a> on&nbsp;<a href="https://www.facebook.com/labiotary/posts/1681726635449987">Monday, February 15, 2016</a></blockquote></div>
+</div>
 </div>
 </div>
     </div>
@@ -293,10 +293,10 @@
         $('#test').scrollToFixed();
         $('.res-nav_click').click(function(){
             $('.main-nav').slideToggle();
-            return false
-
+            return false    
+            
         });
-
+        
     });
 </script>
 
@@ -314,10 +314,10 @@
 
 <script type="text/javascript">
 	$(window).load(function(){
-
+		
 		$('.main-nav li a').bind('click',function(event){
 			var $anchor = $(this);
-
+			
 			$('html, body').stop().animate({
 				scrollTop: $($anchor.attr('href')).offset().top - 102
 			}, 1500,'easeInOutExpo');
